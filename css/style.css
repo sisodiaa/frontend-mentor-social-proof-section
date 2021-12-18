@@ -1,3 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+li {
+  list-style: none;
+}
+
+:root {
+  --color-dark-magenta: hsl(300, 43%, 22%);
+  --color-soft-pink: hsl(333, 80%, 67%);
+  --color-dark-gryaish-magenta: hsl(303, 10%, 53%);
+  --color-light-grayish-magenta: hsl(300, 24%, 96%);
+  --color-white: hsl(0, 0%, 100%);
+  --margin-large: 6rem;
+  --margin-medium: 3rem;
+  --margin-normal: 2rem;
+  --margin-small: 1rem;
+  --padding-large: 6rem;
+  --padding-medium: 3rem;
+  --padding-normal: 2rem;
+  --padding-small: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 93.75%;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+}
+
+.margin-top-large {
+  margin-top: var(--margin-large);
+}
+
+.padding-top-large {
+  padding-top: var(--padding-large);
+}
+
+.margin-bottom-large {
+  margin-bottom: var(--margin-large);
+}
+
+.padding-bottom-large {
+  padding-bottom: var(--padding-large);
+}
+
+.margin-left-large {
+  margin-left: var(--margin-large);
+}
+
+.padding-left-large {
+  padding-left: var(--padding-large);
+}
+
+.margin-right-large {
+  margin-right: var(--margin-large);
+}
+
+.padding-right-large {
+  padding-right: var(--padding-large);
+}
+
+.margin-horizontal-large {
+  margin-left: var(--margin-large);
+  margin-right: var(--margin-large);
+}
+
+.margin-vertical-large {
+  margin-top: var(--margin-large);
+  margin-bottom: var(--margin-large);
+}
+
+.padding-horizontal-large {
+  padding-left: var(--padding-large);
+  padding-right: var(--padding-large);
+}
+
+.padding-vertical-large {
+  padding-top: var(--padding-large);
+  padding-bottom: var(--padding-large);
+}
+
+.margin-large {
+  margin-top: var(--margin-large);
+  margin-bottom: var(--margin-large);
+  margin-left: var(--margin-large);
+  margin-right: var(--margin-large);
+}
+
+.padding-large {
+  padding-top: var(--padding-large);
+  padding-bottom: var(--padding-large);
+  padding-left: var(--padding-large);
+  padding-right: var(--padding-large);
+}
+
+.margin-top-medium {
+  margin-top: var(--margin-medium);
+}
+
+.padding-top-medium {
+  padding-top: var(--padding-medium);
+}
+
+.margin-bottom-medium {
+  margin-bottom: var(--margin-medium);
+}
+
+.padding-bottom-medium {
+  padding-bottom: var(--padding-medium);
+}
+
+.margin-left-medium {
+  margin-left: var(--margin-medium);
+}
+
+.padding-left-medium {
+  padding-left: var(--padding-medium);
+}
+
+.margin-right-medium {
+  margin-right: var(--margin-medium);
+}
+
+.padding-right-medium {
+  padding-right: var(--padding-medium);
+}
+
+.margin-horizontal-medium {
+  margin-left: var(--margin-medium);
+  margin-right: var(--margin-medium);
+}
+
+.margin-vertical-medium {
+  margin-top: var(--margin-medium);
+  margin-bottom: var(--margin-medium);
+}
+
+.padding-horizontal-medium {
+  padding-left: var(--padding-medium);
+  padding-right: var(--padding-medium);
+}
+
+.padding-vertical-medium {
+  padding-top: var(--padding-medium);
+  padding-bottom: var(--padding-medium);
+}
+
+.margin-medium {
+  margin-top: var(--margin-medium);
+  margin-bottom: var(--margin-medium);
+  margin-left: var(--margin-medium);
+  margin-right: var(--margin-medium);
+}
+
+.padding-medium {
+  padding-top: var(--padding-medium);
+  padding-bottom: var(--padding-medium);
+  padding-left: var(--padding-medium);
+  padding-right: var(--padding-medium);
+}
+
+.margin-top-normal {
+  margin-top: var(--margin-normal);
+}
+
+.padding-top-normal {
+  padding-top: var(--padding-normal);
+}
+
+.margin-bottom-normal {
+  margin-bottom: var(--margin-normal);
+}
+
+.padding-bottom-normal {
+  padding-bottom: var(--padding-normal);
+}
+
+.margin-left-normal {
+  margin-left: var(--margin-normal);
+}
+
+.padding-left-normal {
+  padding-left: var(--padding-normal);
+}
+
+.margin-right-normal {
+  margin-right: var(--margin-normal);
+}
+
+.padding-right-normal {
+  padding-right: var(--padding-normal);
+}
+
+.margin-horizontal-normal {
+  margin-left: var(--margin-normal);
+  margin-right: var(--margin-normal);
+}
+
+.margin-vertical-normal {
+  margin-top: var(--margin-normal);
+  margin-bottom: var(--margin-normal);
+}
+
+.padding-horizontal-normal {
+  padding-left: var(--padding-normal);
+  padding-right: var(--padding-normal);
+}
+
+.padding-vertical-normal {
+  padding-top: var(--padding-normal);
+  padding-bottom: var(--padding-normal);
+}
+
+.margin-normal {
+  margin-top: var(--margin-normal);
+  margin-bottom: var(--margin-normal);
+  margin-left: var(--margin-normal);
+  margin-right: var(--margin-normal);
+}
+
+.padding-normal {
+  padding-top: var(--padding-normal);
+  padding-bottom: var(--padding-normal);
+  padding-left: var(--padding-normal);
+  padding-right: var(--padding-normal);
+}
+
+.margin-top-small {
+  margin-top: var(--margin-small);
+}
+
+.padding-top-small {
+  padding-top: var(--padding-small);
+}
+
+.margin-bottom-small {
+  margin-bottom: var(--margin-small);
+}
+
+.padding-bottom-small {
+  padding-bottom: var(--padding-small);
+}
+
+.margin-left-small {
+  margin-left: var(--margin-small);
+}
+
+.padding-left-small {
+  padding-left: var(--padding-small);
+}
+
+.margin-right-small {
+  margin-right: var(--margin-small);
+}
+
+.padding-right-small {
+  padding-right: var(--padding-small);
+}
+
+.margin-horizontal-small {
+  margin-left: var(--margin-small);
+  margin-right: var(--margin-small);
+}
+
+.margin-vertical-small {
+  margin-top: var(--margin-small);
+  margin-bottom: var(--margin-small);
+}
+
+.padding-horizontal-small {
+  padding-left: var(--padding-small);
+  padding-right: var(--padding-small);
+}
+
+.padding-vertical-small {
+  padding-top: var(--padding-small);
+  padding-bottom: var(--padding-small);
+}
+
+.margin-small {
+  margin-top: var(--margin-small);
+  margin-bottom: var(--margin-small);
+  margin-left: var(--margin-small);
+  margin-right: var(--margin-small);
+}
+
+.padding-small {
+  padding-top: var(--padding-small);
+  padding-bottom: var(--padding-small);
+  padding-left: var(--padding-small);
+  padding-right: var(--padding-small);
+}
+
+.border-curved {
+  border-radius: 0.5rem;
+}
+
+body {
+  position: relative;
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  z-index: 50;
+}
+
+.proof {
+  text-align: center;
+}
+.proof__heading {
+  font-size: 2rem;
+  color: var(--color-dark-magenta);
+}
+.proof__lead {
+  color: var(--color-dark-gryaish-magenta);
+}
+.proof__rating {
+  display: block;
+  font-weight: 700;
+  background-color: var(--color-light-grayish-magenta);
+  color: var(--color-dark-magenta);
+}
+.proof__rating::before {
+  display: block;
+  content: "";
+  background-image: url(../images/icon-star.svg), url(../images/icon-star.svg), url(../images/icon-star.svg), url(../images/icon-star.svg), url(../images/icon-star.svg);
+  background-repeat: no-repeat;
+  background-position: left, 1.95rem, 3.9rem, 5.85rem, right;
+  width: 9rem;
+  height: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.75rem;
+}
+.proof__testimonials {
+  text-align: left;
+}
+.proof__testimonial {
+  background-color: var(--color-dark-magenta);
+}
+.proof__buyer {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: min-content max-content;
+  column-gap: 1.25rem;
+  align-items: center;
+  font-size: 0.89rem;
+}
+.proof__buyer-picture {
+  grid-row: 1/span 2;
+  grid-column: 1/span 1;
+  width: 3rem;
+  height: 100%;
+  border-radius: 50%;
+}
+.proof__buyer-name {
+  font-weight: 700;
+  color: var(--color-white);
+  align-self: end;
+}
+.proof__buyer-status {
+  font-weight: 400;
+  color: var(--color-soft-pink);
+}
+.proof__comment {
+  color: var(--color-light-grayish-magenta);
+  font-size: 0.89rem;
+  line-height: 1.7;
+}
+
+.pattern-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15.6rem;
+  margin-top: -6rem;
+  background-image: url(../images/bg-pattern-top-mobile.svg);
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+.pattern-bottom {
+  position: absolute;
+  bottom: -6rem;
+  right: 0;
+  width: 100%;
+  height: 33.6rem;
+  background-image: url(../images/bg-pattern-bottom-mobile.svg);
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
 .attribution {
   display: none;
 }

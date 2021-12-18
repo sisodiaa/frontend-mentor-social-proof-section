@@ -1,3 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+
+// Reset
+li {
+  list-style: none;
+}
+
+// Base
+:root {
+  --color-dark-magenta: hsl(300, 43%, 22%);
+  --color-soft-pink: hsl(333, 80%, 67%);
+  --color-dark-gryaish-magenta: hsl(303, 10%, 53%);
+  --color-light-grayish-magenta: hsl(300, 24%, 96%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --margin-large: 6rem;
+  --margin-medium: 3rem;
+  --margin-normal: 2rem;
+  --margin-small: 1rem;
+
+  --padding-large: 6rem;
+  --padding-medium: 3rem;
+  --padding-normal: 2rem;
+  --padding-small: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 93.75%;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+}
+
+// Utilities
+$sides: (top, bottom, left, right);
+$measures: (large, medium, normal, small);
+
+@each $measure in $measures {
+  @each $side in $sides {
+    .margin-#{$side}-#{$measure} {
+      margin-#{$side}: var(--margin-#{$measure});
+    }
+
+    .padding-#{$side}-#{$measure} {
+      padding-#{$side}: var(--padding-#{$measure});
+    }
+  }
+
+  .margin-horizontal-#{$measure} {
+    margin-left: var(--margin-#{$measure});
+    margin-right: var(--margin-#{$measure});
+  }
+
+  .margin-vertical-#{$measure} {
+    margin-top: var(--margin-#{$measure});
+    margin-bottom: var(--margin-#{$measure});
+  }
+
+  .padding-horizontal-#{$measure} {
+    padding-left: var(--padding-#{$measure});
+    padding-right: var(--padding-#{$measure});
+  }
+
+  .padding-vertical-#{$measure} {
+    padding-top: var(--padding-#{$measure});
+    padding-bottom: var(--padding-#{$measure});
+  }
+
+  .margin-#{$measure} {
+    margin-top: var(--margin-#{$measure});
+    margin-bottom: var(--margin-#{$measure});
+    margin-left: var(--margin-#{$measure});
+    margin-right: var(--margin-#{$measure});
+  }
+
+  .padding-#{$measure} {
+    padding-top: var(--padding-#{$measure});
+    padding-bottom: var(--padding-#{$measure});
+    padding-left: var(--padding-#{$measure});
+    padding-right: var(--padding-#{$measure});
+  }
+}
+
+.border-curved {
+  border-radius: 0.5rem;
+}
+
+body {
+  position: relative;
+}
+
+// Components
+.container {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  z-index: 50;
+}
+
+.proof {
+  text-align: center;
+
+  &__heading {
+    font-size: 2rem;
+    color: var(--color-dark-magenta);
+  }
+
+  &__lead {
+    color: var(--color-dark-gryaish-magenta);
+  }
+
+  &__rating {
+    display: block;
+    font-weight: 700;
+    background-color: var(--color-light-grayish-magenta);
+    color: var(--color-dark-magenta);
+
+    &::before {
+      display: block;
+      content: "";
+      // keeping it simple so that it matches design document
+      // therefore not opting background-position: space
+      background-image: url(../images/icon-star.svg),
+        url(../images/icon-star.svg), url(../images/icon-star.svg),
+        url(../images/icon-star.svg), url(../images/icon-star.svg);
+      background-repeat: no-repeat;
+      background-position: left, 1.95rem, 3.9rem, 5.85rem, right;
+      width: 9rem;
+      height: 2rem;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  &__testimonials {
+    text-align: left;
+  }
+
+  &__testimonial {
+    background-color: var(--color-dark-magenta);
+  }
+
+  &__buyer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: min-content max-content;
+    column-gap: 1.25rem;
+    align-items: center;
+    font-size: 0.89rem;
+
+    &-picture {
+      grid-row: 1 / span 2;
+      grid-column: 1 / span 1;
+      width: 3rem;
+      height: 100%;
+      border-radius: 50%;
+    }
+
+    &-name {
+      font-weight: 700;
+      color: var(--color-white);
+      align-self: end;
+    }
+
+    &-status {
+      font-weight: 400;
+      color: var(--color-soft-pink);
+    }
+  }
+
+  &__comment {
+    color: var(--color-light-grayish-magenta);
+    font-size: 0.89rem;
+    line-height: 1.7;
+  }
+}
+
+.pattern-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15.6rem;
+  margin-top: -6rem;
+  background-image: url(../images/bg-pattern-top-mobile.svg);
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+.pattern-bottom {
+  position: absolute;
+  bottom: -6rem;
+  right: 0;
+  width: 100%;
+  height: 33.6rem;
+  background-image: url(../images/bg-pattern-bottom-mobile.svg);
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
 .attribution {
   display: none;
 }
