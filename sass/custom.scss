@@ -6,6 +6,8 @@ li {
 }
 
 // Base
+$breakpoint-mobile: 60em;
+
 :root {
   --color-dark-magenta: hsl(300, 43%, 22%);
   --color-soft-pink: hsl(333, 80%, 67%);
@@ -17,11 +19,13 @@ li {
   --margin-medium: 3rem;
   --margin-normal: 2rem;
   --margin-small: 1rem;
+  --margin-none: 0rem;
 
   --padding-large: 6rem;
   --padding-medium: 3rem;
   --padding-normal: 2rem;
   --padding-small: 1rem;
+  --padding-none: 0rem;
 }
 
 *,
@@ -43,7 +47,7 @@ body {
 
 // Utilities
 $sides: (top, bottom, left, right);
-$measures: (large, medium, normal, small);
+$measures: (large, medium, normal, small, none);
 
 @each $measure in $measures {
   @each $side in $sides {
@@ -103,6 +107,7 @@ body {
 .container {
   position: relative;
   width: 90%;
+  max-width: 72rem;
   margin: 0 auto;
   z-index: 50;
 }
@@ -207,6 +212,140 @@ body {
   background-image: url(../images/bg-pattern-bottom-mobile.svg);
   background-repeat: no-repeat;
   z-index: 10;
+}
+
+@media only screen and (min-width: $breakpoint-mobile) {
+  @each $measure in $measures {
+    @each $side in $sides {
+      .margin-#{$side}-#{$measure}-desktop {
+        margin-#{$side}: var(--margin-#{$measure});
+      }
+
+      .padding-#{$side}-#{$measure}-desktop {
+        padding-#{$side}: var(--padding-#{$measure});
+      }
+    }
+
+    .margin-horizontal-#{$measure}-desktop {
+      margin-left: var(--margin-#{$measure});
+      margin-right: var(--margin-#{$measure});
+    }
+
+    .margin-vertical-#{$measure}-desktop {
+      margin-top: var(--margin-#{$measure});
+      margin-bottom: var(--margin-#{$measure});
+    }
+
+    .padding-horizontal-#{$measure}-desktop {
+      padding-left: var(--padding-#{$measure});
+      padding-right: var(--padding-#{$measure});
+    }
+
+    .padding-vertical-#{$measure}-desktop {
+      padding-top: var(--padding-#{$measure});
+      padding-bottom: var(--padding-#{$measure});
+    }
+
+    .margin-#{$measure}-desktop {
+      margin-top: var(--margin-#{$measure});
+      margin-bottom: var(--margin-#{$measure});
+      margin-left: var(--margin-#{$measure});
+      margin-right: var(--margin-#{$measure});
+    }
+
+    .padding-#{$measure}-desktop {
+      padding-top: var(--padding-#{$measure});
+      padding-bottom: var(--padding-#{$measure});
+      padding-left: var(--padding-#{$measure});
+      padding-right: var(--padding-#{$measure});
+    }
+  }
+
+  .container {
+    width: 75%;
+  }
+
+  .proof {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 13%;
+    row-gap: 2rem;
+    align-items: baseline;
+
+    &__message {
+      width: 42%;;
+      text-align: left;
+    }
+
+    &__heading {
+      font-size: 3.25rem;
+    }
+
+    &__ratings {
+      width: 45%;
+    }
+
+    &__rating {
+      text-align: left;
+
+      &::before {
+        display: inline-block;
+        height: 1rem;
+        margin-bottom: 0;
+        margin-right: 1.75rem;
+      }
+
+      &:nth-child(2) {
+        transform: translateX(3.5rem);
+      }
+
+      &:nth-child(3) {
+        transform: translateX(7rem);
+      }
+    }
+
+    &__testimonials {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      column-gap: 2%;
+    }
+
+    &__testimonial {
+      margin-bottom: 0;
+
+      &:nth-child(2) {
+        transform: translateY(1rem);
+      }
+
+      &:nth-child(3) {
+        transform: translateY(2rem);
+      }
+    }
+  }
+
+  .pattern-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 39rem;
+    height: 100%;
+    margin-top: -6rem;
+    background-image: url(../images/bg-pattern-top-desktop.svg);
+    background-repeat: no-repeat;
+    z-index: 10;
+  }
+
+  .pattern-bottom {
+    position: absolute;
+    bottom: -15.5rem;
+    right: 0;
+    width: 72.5rem;
+    height: 100%;
+    background-image: url(../images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat;
+    z-index: 10;
+  }
 }
 
 .attribution {
